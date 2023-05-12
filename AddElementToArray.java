@@ -3,20 +3,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AddElementToArray {
-    public static void addElements(Integer[] arr,int position,int element){
-        List<Integer>list = new ArrayList<Integer>(Arrays.asList(arr));
+    public static void main(String[] args) {
+        Integer[] arr = {1, 2, 3, 4, 5, 6};
 
-        list.add(position-1,element);
-
-        arr = list.toArray(arr);
-
-        System.out.println("original array"+Arrays.toString(arr));
-
-
-
-
-
-
-
+        System.out.println("Array:" + Arrays.toString(arr));
+        List<Integer> arrayList = new ArrayList<Integer>(Arrays.asList(arr));
+        arrayList.add(7);
+        arr = arrayList.toArray(arr);
+        System.out.println("Array after adding element: " + Arrays.toString(arr));
     }
 }
