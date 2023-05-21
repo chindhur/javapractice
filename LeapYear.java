@@ -5,24 +5,21 @@ public class LeapYear {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter the year:");
         int year = scanner.nextInt();
-        boolean isLeapYear;
 
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                if (year % 400 == 0)        // if year is divided by 400 then it is a leap year
-
-                    isLeapYear = true;
-                else
-                    isLeapYear = false;
-            } else
-                isLeapYear = true; //if Divisible by 4 but not by 100, it's a leap year
-
-        } else isLeapYear = false;
-
-        if(isLeapYear){
-            System.out.println("it is leap year");
-        }else
-            System.out.println("it is not leap year");
+        if(isLeap(year)){
+            System.out.println("it is Leap year");
+        }
+        else{
+            System.out.println("it is not Leap year");
+        }
     }
 
+    public static boolean isLeap(int year){
+        if((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
